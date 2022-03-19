@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId("user_id")->constrained();
             $table->foreignId("item_id")->constrained();
             $table->smallInteger("quantity");
-            $table->integer("invoice_id");
+            $table->string("invoice_id");
             $table->integer("type");
             $table->integer("status");
             $table->timestamps();

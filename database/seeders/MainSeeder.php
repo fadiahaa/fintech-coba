@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Balance;
 use App\Models\Item;
 use App\Models\Role;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -53,21 +54,21 @@ class MainSeeder extends Seeder
             "role_id"   => $student->id
         ]);
 
-        Item::create([
+        $bakso  = Item::create([
             "name"          => "Bakso",
             "price"         => 10000,
             "stock"         => 10,
             "description"   => "Bakso daging dan urat"
         ]);
 
-        Item::create([
+        $risol  = Item::create([
             "name"          => "Risol Mayo",
             "price"         => 2500,
             "stock"         => 20,
             "description"   => "Risol dan mayonaise"
         ]);
 
-        Item::create([
+        $pucuk  = Item::create([
             "name"          => "Teh Pucuk",
             "price"         => 3000,
             "stock"         => 15,
@@ -76,7 +77,16 @@ class MainSeeder extends Seeder
 
         Balance::create([
             "user_id"   => $keren->id,
-            "balance"   => 0
+            "balance"   => 20000
+        ]);
+
+        Transaction::create([
+            "user_id"   => $keren->id,
+            "item_id"   => $pucuk->id,
+            "quantity"  => 2,
+            "invoice_id"   => "NV_001",
+            "type"      => 2,
+            "status"    => 1
         ]);
     }
 }
