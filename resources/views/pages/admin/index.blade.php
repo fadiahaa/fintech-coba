@@ -85,7 +85,7 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="{{ route('user.edit') }}">
+                                                <form method="POST" action={{ route('user.edit', $user->id) }}>
                                                     @method("PUT")
                                                     @csrf
                                                     <div class="mb-3">
@@ -123,7 +123,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <div>
+                                <form method="POST" action={{ route('user.delete', ['user' => $user->id]) }}>
+                                    @csrf
+                                    @method("DELETE")
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 @endforeach

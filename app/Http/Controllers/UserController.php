@@ -33,7 +33,7 @@ class UserController extends Controller
     }
 
     public function update(Request $request, User $user){
-        dd($request);
+        // dd($user);
         $request->validate([
             "name"  => "required",
             "email" => "required",
@@ -44,6 +44,11 @@ class UserController extends Controller
         $user->email    = $request->email;
         $user->role_id  = $request->role_id;
         $user->update();
+        return redirect()->back();
+    }
+
+    public function destroy(User $user){
+        $user->delete();
         return redirect()->back();
     }
 }
