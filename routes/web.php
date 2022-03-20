@@ -33,9 +33,10 @@ Route::prefix("item")->group(function(){
 
 Route::prefix("topup")->group(function(){
     Route::get("/", [TopupController::class, 'index'])->name("topup.index");
-    Route::get("/check", [TopupController::class, 'check'])->name("topup.check");
+    Route::post("/create", [TopupController::class, 'store'])->name("topup.create");
 });
 
-Route::prefix("transaction")->group(function(){
-    Route::get("/", [TransactionController::class, 'index'])->name("transaction.index");
-});
+// Route::prefix("transaction")->group(function(){
+//     Route::get("/", [TransactionController::class, 'index'])->name("transaction.index");
+//     Route::post("/create", [TransactionController::class, 'store'])->name("transaction.create");
+// });
