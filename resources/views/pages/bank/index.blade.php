@@ -12,14 +12,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Keren</td>
-                    <td>20000</td>
-                    <td>
+                @foreach ($transactions as $transaction)
+                    <tr>
+                        <th scope="row">{{ $loop->iteration }}</th>
+                        <td>{{ $transaction->name }}</td>
+                        <td>20000</td>
+                        <td></td>
+                    </tr>
+                @endforeach
 
-                    </td>
-                </tr>
             </tbody>
         </table>
     </div>

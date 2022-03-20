@@ -14,9 +14,7 @@ class TopupController extends Controller
         return view("pages.user.topup", compact("balance"));
     }
 
-    public function check(){
-        return view("pages.bank.index");
-    }
+
 
     public function store(Request $request){
         // dd(Balance::where("user_id", Auth::user()->id)->first()->balance);

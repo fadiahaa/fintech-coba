@@ -31,7 +31,7 @@ $page = 'Home';
                             <ul>
                                 {{-- <li><a href="{{ route('topup') }}">Top Up</a></li>
                                 <li><a href="{{ route('transaksi') }}">Jajan</a></li> --}}
-                                <li><a href={{ route('topup.check') }}>TopUp List</a></li>
+                                <li><a href={{ route('bank.index') }}>TopUp List</a></li>
                             </ul>
                         @endif
 
@@ -46,7 +46,7 @@ $page = 'Home';
                         @if (Auth::user()->role_id === 4)
                             <ul>
                                 <li><a href="{{ route('topup.index') }}">Top Up</a></li>
-                                <li><a href="">Shopping</a></li>
+                                <li><a href="{{ route('transaction.index') }}">Shopping</a></li>
                             </ul>
                         @endif
 
