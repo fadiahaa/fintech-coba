@@ -10,7 +10,7 @@
             </div>
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
-                    <p>Rp. 20000</p>
+                    <p>Rp. <span>{{ auth()->user()->balance->balance }}</span> </p>
                 </blockquote>
             </div>
         </div>

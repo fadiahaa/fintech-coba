@@ -27,7 +27,7 @@ class ItemController extends Controller
         $item->save();
         return redirect()->back();
     }
-    public function Update(Request $request, Item $item){
+    public function update(Request $request, Item $item){
         $item->name  = $request->name;
         $item->image  = $request->image;
         $item->price  = $request->price;

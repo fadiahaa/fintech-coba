@@ -80,7 +80,7 @@ class MainSeeder extends Seeder
 
         Balance::create([
             "user_id"   => $keren->id,
-            "balance"   => 20000
+            "balance"   => 30000
         ]);
 
         Transaction::create([
