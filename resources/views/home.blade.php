@@ -18,75 +18,38 @@ $page = 'Home';
                             </div>
                         @endif
 
-                        @if (Auth::user()->role_id === 4)
+
+                        @if (Auth::user()->role_id === 1)
                             <ul>
                                 {{-- <li><a href="{{ route('topup') }}">Top Up</a></li>
                                 <li><a href="{{ route('transaksi') }}">Jajan</a></li> --}}
-                                <li><a href="">Riwayat Transaksi</a></li>
+                                <li><a href={{ route('user.list') }}>User List</a></li>
                             </ul>
                         @endif
-                        {{-- @if (Auth::user()->role_id === 2)
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>No.</th>
-                                        <th>Nama</th>
-                                        <th>Nominal</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($pengajuans as $key => $pengajuan)
-                                        <tr>
-                                            <td>{{ $key + 1 }}</td>
-                                            <td>{{ $pengajuan->user->name }}</td>
-                                            <td>{{ $pengajuan->jumlah }}</td>
-                                            <td>
-                                                <a href="{{ route('topup.setuju', ['transaksi_id' => $pengajuan->id]) }}"
-                                                    class="btn btn-success">
-                                                    Setuju
-                                                </a>
-                                                <a href="{{ route('topup.tolak', ['transaksi_id' => $pengajuan->id]) }}"
-                                                    class="btn btn-danger">
-                                                    Tolak
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+
+                        @if (Auth::user()->role_id === 2)
+                            <ul>
+                                {{-- <li><a href="{{ route('topup') }}">Top Up</a></li>
+                                <li><a href="{{ route('transaksi') }}">Jajan</a></li> --}}
+                                <li><a href={{ route('topup.check') }}>TopUp List</a></li>
+                            </ul>
                         @endif
+
                         @if (Auth::user()->role_id === 3)
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>No.</th>
-                                        <th>Nama</th>
-                                        <th>Nominal</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($pengajuan_jajans as $key => $pengajuan_jajan)
-                                        <tr>
-                                            <td>{{ $key + 1 }}</td>
-                                            <td>{{ $pengajuan_jajan->user->name }}</td>
-                                            <td>{{ $pengajuan_jajan->jumlah }}</td>
-                                            <td>
-                                                <a href="{{ route('jajan.setuju', ['invoice_id' => $pengajuan_jajan->invoice_id]) }}"
-                                                    class="btn btn-success">
-                                                    Setuju
-                                                </a>
-                                                <a href="{{ route('jajan.tolak', ['invoice_id' => $pengajuan_jajan->invoice_id]) }}"
-                                                    class="btn btn-danger">
-                                                    Tolak
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        @endif --}}
+                            <ul>
+                                {{-- <li><a href="{{ route('topup') }}">Top Up</a></li>
+                                <li><a href="{{ route('transaksi') }}">Jajan</a></li> --}}
+                                <li><a href={{ route('item.list') }}>Item List</a></li>
+                            </ul>
+                        @endif
+
+                        @if (Auth::user()->role_id === 4)
+                            <ul>
+                                <li><a href="{{ route('topup.index') }}">Top Up</a></li>
+                                <li><a href="{{ route('transaction.index') }}">Shopping</a></li>
+                            </ul>
+                        @endif
+
                     </div>
                 </div>
             </div>

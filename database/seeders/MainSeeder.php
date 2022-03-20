@@ -56,6 +56,7 @@ class MainSeeder extends Seeder
 
         $bakso  = Item::create([
             "name"          => "Bakso",
+            "image"         => "img-bakso.jpg",
             "price"         => 10000,
             "stock"         => 10,
             "description"   => "Bakso daging dan urat"
@@ -63,6 +64,7 @@ class MainSeeder extends Seeder
 
         $risol  = Item::create([
             "name"          => "Risol Mayo",
+            "image"         => "img-risol.jpg",
             "price"         => 2500,
             "stock"         => 20,
             "description"   => "Risol dan mayonaise"
@@ -70,6 +72,7 @@ class MainSeeder extends Seeder
 
         $pucuk  = Item::create([
             "name"          => "Teh Pucuk",
+            "image"         => "img-pucuk.jpg",
             "price"         => 3000,
             "stock"         => 15,
             "description"   => "Minuman teh pucuk"
