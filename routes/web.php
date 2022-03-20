@@ -33,6 +33,7 @@ Route::prefix("item")->group(function(){
 
 Route::prefix("topup")->group(function(){
     Route::get("/", [TopupController::class, 'index'])->name("topup.index");
+    Route::get("/check", [TopupController::class, 'check'])->name("topup.check");
     Route::post("/create", [TopupController::class, 'store'])->name("topup.create");
 });
 

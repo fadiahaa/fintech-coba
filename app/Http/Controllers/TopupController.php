@@ -14,7 +14,12 @@ class TopupController extends Controller
         return view("pages.user.topup", compact("balance"));
     }
 
+    public function check(){
+        return view("pages.bank.index");
+    }
+
     public function store(Request $request){
+        // dd(Balance::where("user_id", Auth::user()->id)->first()->balance);
         if($request->type == 1){
             $invoice_id = "SAL_" . Auth::user()->id . now()->timestamp;
 
@@ -26,8 +31,7 @@ class TopupController extends Controller
                 "status" => 2
             ]);
 
-            return redirect()->route("topup.index")->with("status", "Top Up on Proccess");
+            return redirect()->back();
         }
     }
-
 }

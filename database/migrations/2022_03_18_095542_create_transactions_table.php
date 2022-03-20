@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id")->constrained();
-            $table->foreignId("item_id")->constrained();
-            $table->smallInteger("quantity");
+            $table->foreignId("item_id")->nullable()->constrained();
+            $table->smallInteger("quantity")->nullable();
             $table->string("invoice_id");
             $table->integer("type");
             $table->integer("status");
