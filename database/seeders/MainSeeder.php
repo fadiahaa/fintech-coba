@@ -36,7 +36,7 @@ class MainSeeder extends Seeder
         $ira    = User::create([
             "name"      => "Ira",
             "email"     => "ira@gmail.com",
-            "password"  => Hash::make("bella"),
+            "password"  => Hash::make("ira"),
             "role_id"   => $bank->id
         ]);
 
@@ -87,6 +87,7 @@ class MainSeeder extends Seeder
             "user_id"   => $keren->id,
             "item_id"   => $pucuk->id,
             "quantity"  => 2,
+            "amount"    => 2000,
             "invoice_id"   => "NV_001",
             "type"      => 2,
             "status"    => 1

@@ -23,6 +23,7 @@ class TopupController extends Controller
 
             Transaction::create([
                 "user_id" => Auth::user()->id,
+                "quantity" => $request->quantity,
                 "amount" => $request->amount,
                 "invoice_id" => $invoice_id,
                 "type" => $request->type,

@@ -15,9 +15,14 @@
                 @foreach ($transactions as $transaction)
                     <tr>
                         <th scope="row">{{ $loop->iteration }}</th>
-                        <td>{{ $transaction->name }}</td>
-                        <td>20000</td>
-                        <td></td>
+                        <td>{{ $transaction->user->name }}</td>
+                        <td>{{ $transaction->amount }}</td>
+                        <td>
+                            <div style="float: left;"></div>
+                            <input class="btn btn-danger" type="submit" value="Decline">
+                            <input class="btn btn-primary" type="submit" value="Accept">
+                            <div style="clear:both"></div>
+                        </td>
                     </tr>
                 @endforeach
 

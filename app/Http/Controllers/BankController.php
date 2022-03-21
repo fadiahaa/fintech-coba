@@ -12,6 +12,6 @@ class BankController extends Controller
         return view('pages.bank.index', compact('transactions'));
     }
     public function acc_transaction() {
-
+        
     }
 }
