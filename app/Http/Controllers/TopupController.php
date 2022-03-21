@@ -33,4 +33,19 @@ class TopupController extends Controller
             return redirect()->back();
         }
     }
+
+    public function acc_topup($transaction_id){
+        $transaction    = Transaction::find($transaction_id);
+        $balance        = Balance::where("user_id", $transaction->user_id)->first();
+
+        Balance::where("user_id", $transaction->user_id)->update([
+            "balance" => $balance->balance + $transaction->amount   
+        ]);
+        
+        $transaction->update([
+            "status"    => 3
+        ]);
+
+        return redirect()->back()->with("status", "TopUp Successfully");
+    }
 }

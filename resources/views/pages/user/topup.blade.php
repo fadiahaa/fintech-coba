@@ -5,7 +5,9 @@ $page = 'Top Up';
 ?>
 
 @section('content')
-    <div class="container">
+    <div class="container row justify-content-center">
+     
+
         Balance: {{ $balance->balance??0 }}
         <form method="POST" action={{ route('topup.create') }}>
             @csrf

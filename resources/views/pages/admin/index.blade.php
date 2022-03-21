@@ -48,7 +48,7 @@
         </div>
 
         {{-- list users --}}
-        <table class="table">
+        <table class="table table-bordered border-primary">
             <thead>
                 <tr>
                     <th scope="col">No</th>
@@ -70,7 +70,7 @@
                         <td>
                             <div style="float: left;margin-right:3px;">
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                     data-bs-target="#editModal-{{ $user->id }}">
                                     Edit
                                 </button>

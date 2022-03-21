@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -36,13 +36,15 @@ Route::prefix("topup")->group(function(){
     Route::get("/", [TopupController::class, 'index'])->name("topup.index");
     // Route::get("/check", [TopupController::class, 'check'])->name("topup.check");
     Route::post("/create", [TopupController::class, 'store'])->name("topup.create");
+    Route::get("accept/{transaction_id}", [TopupController::class, 'acc_topup'])->name("topup.accept");
 });
 
 Route::prefix("bank")->group(function(){
     Route::get("/", [BankController::class, 'get_transaction'])->name("bank.index");
+    
 });
 
 Route::prefix("transaction")->group(function(){
     Route::get("/", [TransactionController::class, 'index'])->name("transaction.index");
-    // Route::post("/create", [TransactionController::class, 'store'])->name("transaction.create");
+    Route::post("/create", [TransactionController::class, 'store'])->name("transaction.create");
 });
